@@ -1,55 +1,42 @@
-// Action when press Enter
-$("form").keypress(function(e){
-   if (e.which == 13) {
-      doTheSearch();
-   }
-});
-
-// Action when click the button
-$('button').on('click', function(e){
-   e.preventDefault();
-   doTheSearch();
-});
-
+var timeoutID;
 // function to run when press Enter or click the button
 function doTheSearch() {
-   $('.random').css('display','none');
+  //  $('.random').css('display','none');
    $('form').addClass('compact');
-   
-   // wait for ajax call compeleted then get the height of the form
-   $( document ).ajaxComplete(function() {
-      var formHeight = $("form.compact").outerHeight();
-      console.log(formHeight);
-      $('.results').css('margin-top', formHeight + 20 );  
-   });
-     
-   var searchTerm = $('input[type=search]').val();
+
+
+   var searchTerm = $('input').val();
    console.log(searchTerm);
    // empty the page before loading new result
    $('div.results').empty();
-   
+
    // loading jsonp
    $.ajax({
       url:'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=' + searchTerm + '&srwhat=text&srinfo=totalhits&srprop=titlesnippet%7Csnippet',
       dataType: "jsonp",
       success: function(wikiData) {
-         // if loading json successfully, do this:
-         var totalHits = wikiData.query.searchinfo.totalhits;
-         
-         if (totalHits === 0) {
-            // if there's no result matched, do this
-            alert ("There's no match for " + searchTerm);
-         } else {
-            // if there is result, do this
-            displayAsHtml(wikiData);   
-         }
+          $('.border').addClass('grow');
+          if ($('input').val() != '') {
+            // if loading json successfully, do this:
+            var totalHits = wikiData.query.searchinfo.totalhits;
+
+            if (totalHits === 0) {
+              // if there's no result matched, do this
+              // $('form').removeClass('compact');
+              $('.border').removeClass('grow');
+              $('div.results').addClass('error').html("There's no match for " + searchTerm);
+            } else {
+              // if there is result, do this
+              displayAsHtml(wikiData);
+            }
+          }
       },
       error: function() {
          // if cannot load json, do this
          alert ("There's a problem connecting to the server. Please refresh the page and try again.");
       }
    });
-   
+
    function displayAsHtml(wikiData) {
       /* run each value in the query 'wikiData.query.search'
          i is for index of each object inside 'wikiData.query.search'
@@ -58,15 +45,47 @@ function doTheSearch() {
       $.each(wikiData.query.search, function(i, val){
          // replace space with _
          var url = val.title.replace(/\s/g, "_");
-         
-         $('div.results').append('<div class="item"><div class="title"><a href="https://en.wikipedia.org/wiki/' + url + '" target="_blank">' + val.title + '</a></div><div class="desc">' + val.snippet + '</div></div>');
+
+         $('div.results').removeClass('error').append('<div class="item"><div class="title"><a href="https://en.wikipedia.org/wiki/' + url + '" target="_blank">' + val.title + '</a></div><div class="desc">' + val.snippet + '</div></div>');
       })
    }
 }
 
 
-$(window).resize(function(){
-   var formHeight = $("form.compact").outerHeight();
-   console.log(formHeight);
-   $('.results').css('margin-top', formHeight + 20 );
+// $(window).resize(function(){
+//    var formHeight = $("form.compact").outerHeight();
+//    console.log(formHeight);
+//    $('.results').css('margin-top', formHeight + 20 );
+// });
+
+$('input').on('input',function(e){
+  e.preventDefault();
+  clearTimeout(timeoutID);
+  console.log($('input').val());
+  if ( $('input').val() == '' ) {
+    $('form').removeClass('compact');
+    $('.border').removeClass('grow');
+    $('div.results').html('');
+  }
+  else {
+    timeoutID = setTimeout(doTheSearch,700);
+  }
+});
+
+$('input')
+.on('focus',function(){
+  $('.search').addClass('highlight');
+})
+.blur(function(){
+  $('.search').removeClass('highlight');
+});
+
+$('form').on('submit',function(e) {
+  e.preventDefault();
+  if ( $('input').val() == '' ) {
+    $('div.results').addClass('error').html('Please type something to search');
+  }
+  else {
+    doTheSearch();
+  }
 });

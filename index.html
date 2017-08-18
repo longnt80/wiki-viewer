@@ -2,25 +2,31 @@
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FreeCodeCamp - Build a Wikipedia Viewer</title>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:300'>
 
       <link rel="stylesheet" href="css/style.css">
 
-  
+
 </head>
 
 <body>
   <form>
-   <label for="search">Wikipedia Search</label>
-   <input id="search" type="search" />
-   <button>Search</button>
-   <div class="random"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Give me a random page!</a></div>
-</form>
-   
+     <label for="search">Wikipedia Search</label>
+     <div class="search">
+       <div>
+         <input id="search" type="search" />
+       </div>
+       <button type="submit">Search</button>
+     </div>
+     <div class="random"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Give me a random page!</a></div>
+  </form>
+  <div class="border"></div>
+
    <div class="results">
 <!--       <div class="item">
          <div class="title"><a href="https://en.wikipedia.org/wiki/" target="_blank">Roger Federer</a></div>
@@ -31,9 +37,10 @@
          <div class="desc">Something</div>
       </div> -->
    </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src="js/index.js"></script>
 
 </body>
 </html>

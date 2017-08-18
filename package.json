@@ -1,0 +1,25 @@
+{
+  "name": "wiki-viewer",
+  "version": "1.0.0",
+  "description": "A Pen created at CodePen.io. You can find this one at https://codepen.io/longnt80/pen/zwZMYa.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longnt80/wiki-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/longnt80/wiki-viewer/issues"
+  },
+  "homepage": "https://github.com/longnt80/wiki-viewer#readme"
+}
