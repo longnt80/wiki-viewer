@@ -1,0 +1,96 @@
+$blue: #47A5FF;
+$dark-blue: #3561E8;
+
+body {
+   font-family: 'Open Sans', sans-serif;
+   fon-size: 16px;
+}
+
+a {
+   color: $blue;
+   text-decoration: none;
+   &:hover {
+      text-decoration: underline;
+   }
+   &:focus {
+      outline: none;
+   }
+}
+
+form {
+   // border: 1px solid red; /* for debug*/
+   
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-bottom: 4px solid transparent;
+   transition: all 300ms;
+   
+   label {
+      display: block;
+      font-size: 40px;
+      margin: 40px;
+   }
+   input[type=search],button {
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 5px;
+   }
+   input[type=search] {
+      border: 1px solid $blue;
+      transition: border 200ms;
+      &:focus {
+         outline: none;
+         border: 1px solid $dark-blue;
+      }
+   }
+   button {
+      background-color: #ededed;
+      border-color: transparent;
+      cursor: pointer;
+      color: $blue;
+      margin-left: 10px;
+      transition: all 200ms;
+      &:hover {
+         color: #fff;
+         background-color: $blue;
+      }
+   }
+   .random {
+      margin-top: 20px;
+   }
+}
+
+form.compact {
+   display: flex;
+   width: 100%;
+   top: 0;
+   left: 0;
+   transform: translate(0,0);
+   padding: 20px 10px;
+   border-bottom: 4px solid #eee;
+   label {
+      order: 3;
+      margin: 0;
+      margin-left: 40px;
+   }
+   input {order: 1}
+   button {order: 2}
+}
+
+div.results {
+   line-height: 1.5;
+   
+   padding: 0px 40px;
+   .item {
+      background-color: #efefef;
+      margin: 20px 0;
+      .title {
+         padding: 20px 10px 5px;
+      }
+      .desc {
+         padding: 5px 10px 20px;
+      }
+   }
+}
