@@ -1,7 +1,11 @@
 $blue: #47A5FF;
 $dark-blue: #2a6fb1;
-$light-blue: #c5e1f5;
+$lighter-blue: #d8ebf9;
+$light-blue: #cae6fb;
+
 $highlight: #ea7a57;
+$font-color: #5d5252;
+
 * {
   padding: 0;
   margin: 0;
@@ -17,7 +21,7 @@ body {
    font-family: 'Roboto', sans-serif;
    text-align: center;
    line-height: 1.5;
-   color: #5d5252;
+   color: $font-color;
 }
 
 a {
@@ -122,7 +126,7 @@ form {
 
   &.grow {
     width: 95%;
-    background-color: $light-blue;
+    background-color: $lighter-blue;
   }
 }
 
@@ -133,21 +137,30 @@ form {
   font-size: 1em;
 
   .item {
-    background-color: $light-blue;
+    background-color: $lighter-blue;
+    transition: background-color,border-left 500ms linear;
     padding: 0.5em;
     margin-bottom: 0.3em;
     border-left: 0.5em solid transparent;
+    display: block;
+    > span {
+      display: block;
+    }
 
     &:hover {
+      background-color: $light-blue;
       border-left: 0.5em solid $blue;
+      text-decoration: none;
+      color: $blue;
     }
 
     .title {
       margin-bottom: 0.2em;
       font-weight: 700;
-      a {
-        color: $highlight;
-      }
+      color: $highlight;
+    }
+    .desc {
+      color: $font-color;
     }
     .searchmatch {
       background-color: #f6fbff;

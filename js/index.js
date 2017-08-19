@@ -51,12 +51,10 @@ function doTheSearch() {
            }
            $('div.results').append(
 
-              '<div class="item">' +
-                  '<div class="title">' +
-                    '<a href="https://en.wikipedia.org/wiki/' + url + '" target="_blank">' + val.title + '</a>' +
-                  '</div>' +
-                  '<div class="desc">' + val.snippet + '</div>' +
-              '</div>'
+              '<a class="item" href="https://en.wikipedia.org/wiki/' + url + '" target="_blank">' +
+                  '<span class="title">' + val.title + '</span>' +
+                  '<span class="desc">' + val.snippet + '</span>' +
+              '</a>'
 
            );
 

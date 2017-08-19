@@ -91,7 +91,7 @@ form {
   transition-property: width, background-color; }
   .border.grow {
     width: 95%;
-    background-color: #c5e1f5; }
+    background-color: #d8ebf9; }
 
 .results {
   text-align: left;
@@ -99,17 +99,25 @@ form {
   margin: 1em auto;
   font-size: 1em; }
   .results .item {
-    background-color: #c5e1f5;
+    background-color: #d8ebf9;
+    transition: background-color,border-left 500ms linear;
     padding: 0.5em;
     margin-bottom: 0.3em;
-    border-left: 0.5em solid transparent; }
+    border-left: 0.5em solid transparent;
+    display: block; }
+    .results .item > span {
+      display: block; }
     .results .item:hover {
-      border-left: 0.5em solid #47A5FF; }
+      background-color: #cae6fb;
+      border-left: 0.5em solid #47A5FF;
+      text-decoration: none;
+      color: #47A5FF; }
     .results .item .title {
       margin-bottom: 0.2em;
-      font-weight: 700; }
-      .results .item .title a {
-        color: #ea7a57; }
+      font-weight: 700;
+      color: #ea7a57; }
+    .results .item .desc {
+      color: #5d5252; }
     .results .item .searchmatch {
       background-color: #f6fbff; }
   .results.error {
