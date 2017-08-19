@@ -117,16 +117,16 @@ form {
 }
 
 .border {
-  width: 0;
+  max-width: 0;
   margin: 0 auto;
   margin-top: 1em;
   height: 2px;
   background-color: transparent;
-  transition: all 200ms 300ms ease-in;
-  transition-property: width, background-color;
+  transition: all 500ms ease-in;
+  transition-property: max-width, background-color;
 
   &.grow {
-    width: 95%;
+    max-width: 95%;
     background-color: $lighter-blue;
     @media (min-width: 1024px) {
       max-width: 1336px;
