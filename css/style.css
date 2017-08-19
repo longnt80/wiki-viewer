@@ -15,7 +15,8 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  line-height: 1.5; }
+  line-height: 1.5;
+  color: #5d5252; }
 
 a {
   color: #47A5FF;
@@ -31,7 +32,8 @@ form {
   margin-top: 5em;
   transition: margin-top 300ms; }
   form label {
-    font-size: 2em; }
+    font-size: 2em;
+    color: #ea7a57; }
   form .search {
     font-size: 1.3em;
     border: 1px solid #47A5FF;
@@ -39,12 +41,13 @@ form {
     display: flex;
     border-radius: 0.5em;
     margin: 2em auto;
-    transition: margin 300ms; }
+    transition: margin 300ms;
+    box-shadow: 0 0 2px 2px rgba(71, 165, 255, 0); }
     @media (min-width: 1025px) {
       form .search {
         width: 50%; } }
     form .search.highlight {
-      border: 1px solid #2a6fb1; }
+      box-shadow: 0 0 2px 2px rgba(71, 165, 255, 0.5); }
     form .search > div {
       flex-grow: 1; }
       form .search > div input {
@@ -59,15 +62,14 @@ form {
         form .search > div input:focus {
           outline: none; }
     form .search button {
-      background-color: red;
+      color: #fff;
+      background-color: #47A5FF;
       font-size: 1em;
       flex-shrink: 0;
-      width: 2em;
-      height: 2em;
-      text-indent: -9999px;
+      padding: .5em;
       border: none;
-      border-top-right-radius: 0.5em;
-      border-bottom-right-radius: 0.5em; }
+      border-top-right-radius: 0.4em;
+      border-bottom-right-radius: 0.4em; }
       form .search button:focus {
         outline: none; }
   form .random {
@@ -83,11 +85,11 @@ form {
   margin-top: 1em;
   height: 2px;
   background-color: transparent;
-  transition: all 1000ms;
-  transition-property: width,background-color; }
+  transition: all 200ms 300ms ease-in;
+  transition-property: width, background-color; }
   .border.grow {
     width: 95%;
-    background-color: #ddd; }
+    background-color: #c5e1f5; }
 
 .results {
   text-align: left;
@@ -95,13 +97,19 @@ form {
   margin: 1em auto;
   font-size: 1em; }
   .results .item {
-    background-color: #eee;
+    background-color: #c5e1f5;
     padding: 0.5em;
-    margin-bottom: 0.3em; }
+    margin-bottom: 0.3em;
+    border-left: 0.5em solid transparent; }
+    .results .item:hover {
+      border-left: 0.5em solid #47A5FF; }
     .results .item .title {
-      margin-bottom: 0.2em; }
+      margin-bottom: 0.2em;
+      font-weight: 700; }
+      .results .item .title a {
+        color: #ea7a57; }
     .results .item .searchmatch {
-      background-color: yellow; }
+      background-color: #f6fbff; }
   .results.error {
     color: #d63737;
     text-align: center; }

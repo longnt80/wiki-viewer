@@ -6,7 +6,6 @@ function doTheSearch() {
 
 
    var searchTerm = $('input').val();
-   console.log(searchTerm);
    // empty the page before loading new result
    $('div.results').empty();
 
@@ -15,8 +14,9 @@ function doTheSearch() {
       url:'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=' + searchTerm + '&srwhat=text&srinfo=totalhits&srprop=titlesnippet%7Csnippet',
       dataType: "jsonp",
       success: function(wikiData) {
-          $('.border').addClass('grow');
+
           if ($('input').val() != '') {
+            $('.border').addClass('grow');
             // if loading json successfully, do this:
             var totalHits = wikiData.query.searchinfo.totalhits;
 
@@ -44,24 +44,29 @@ function doTheSearch() {
          */
       $.each(wikiData.query.search, function(i, val){
          // replace space with _
-         var url = val.title.replace(/\s/g, "_");
 
-         $('div.results').removeClass('error').append('<div class="item"><div class="title"><a href="https://en.wikipedia.org/wiki/' + url + '" target="_blank">' + val.title + '</a></div><div class="desc">' + val.snippet + '</div></div>');
+           var url = val.title.replace(/\s/g, "_");
+           if ($('div.results').hasClass('error')) {
+             $('div.results').removeClass('error');
+           }
+           $('div.results').append(
+
+              '<div class="item">' +
+                  '<div class="title">' +
+                    '<a href="https://en.wikipedia.org/wiki/' + url + '" target="_blank">' + val.title + '</a>' +
+                  '</div>' +
+                  '<div class="desc">' + val.snippet + '</div>' +
+              '</div>'
+
+           );
+
       })
    }
 }
 
-
-// $(window).resize(function(){
-//    var formHeight = $("form.compact").outerHeight();
-//    console.log(formHeight);
-//    $('.results').css('margin-top', formHeight + 20 );
-// });
-
 $('input').on('input',function(e){
   e.preventDefault();
   clearTimeout(timeoutID);
-  console.log($('input').val());
   if ( $('input').val() == '' ) {
     $('form').removeClass('compact');
     $('.border').removeClass('grow');

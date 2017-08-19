@@ -1,6 +1,7 @@
 $blue: #47A5FF;
 $dark-blue: #2a6fb1;
-
+$light-blue: #c5e1f5;
+$highlight: #ea7a57;
 * {
   padding: 0;
   margin: 0;
@@ -16,6 +17,7 @@ body {
    font-family: 'Open Sans', sans-serif;
    text-align: center;
    line-height: 1.5;
+   color: #5d5252;
 }
 
 a {
@@ -38,6 +40,7 @@ form {
 
   label {
     font-size: 2em;
+    color: $highlight;
   }
 
   .search {
@@ -48,11 +51,12 @@ form {
     border-radius: 0.5em;
     margin: 2em auto;
     transition: margin 300ms;
+    box-shadow: 0 0 2px 2px rgba(71, 165, 255, 0);
     @media (min-width: 1025px) {width: 50%;}
 
 
     &.highlight {
-      border: 1px solid $dark-blue;
+      box-shadow: 0 0 2px 2px rgba(71, 165, 255, 0.5);
     }
     > div {
       flex-grow: 1;
@@ -73,15 +77,15 @@ form {
       }
     }
     button {
-      background-color: red;
+      color: #fff;
+      background-color: $blue;
       font-size: 1em;
       flex-shrink: 0;
-      width: 2em;
-      height: 2em;
-      text-indent: -9999px;
+      padding: .5em;
       border: none;
-      border-top-right-radius: 0.5em;
-      border-bottom-right-radius: 0.5em;
+      border-top-right-radius: 0.4em;
+      border-bottom-right-radius: 0.4em;
+      // box-shadow: 0 0 0px 1px $blue;
       &:focus {
         outline: none;
       }
@@ -111,11 +115,12 @@ form {
   margin-top: 1em;
   height: 2px;
   background-color: transparent;
-  transition: all 1000ms;
-  transition-property: width,background-color;
+  transition: all 200ms 300ms ease-in;
+  transition-property: width, background-color;
+
   &.grow {
     width: 95%;
-    background-color: #ddd;
+    background-color: $light-blue;
   }
 }
 
@@ -126,15 +131,24 @@ form {
   font-size: 1em;
 
   .item {
-    background-color: #eee;
+    background-color: $light-blue;
     padding: 0.5em;
     margin-bottom: 0.3em;
+    border-left: 0.5em solid transparent;
+
+    &:hover {
+      border-left: 0.5em solid $blue;
+    }
 
     .title {
       margin-bottom: 0.2em;
+      font-weight: 700;
+      a {
+        color: $highlight;
+      }
     }
     .searchmatch {
-      background-color: yellow;
+      background-color: #f6fbff;
     }
   }
 
