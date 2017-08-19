@@ -14,7 +14,7 @@ html {
 }
 
 body {
-   font-family: 'Open Sans', sans-serif;
+   font-family: 'Roboto', sans-serif;
    text-align: center;
    line-height: 1.5;
    color: #5d5252;
@@ -39,6 +39,7 @@ form {
 
 
   label {
+    font-family: 'EB Garamond', serif;
     font-size: 2em;
     color: $highlight;
   }
@@ -77,6 +78,7 @@ form {
       }
     }
     button {
+      cursor: pointer;
       color: #fff;
       background-color: $blue;
       font-size: 1em;

@@ -13,7 +13,7 @@ html {
       font-size: 20px; } }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   line-height: 1.5;
   color: #5d5252; }
@@ -32,6 +32,7 @@ form {
   margin-top: 5em;
   transition: margin-top 300ms; }
   form label {
+    font-family: 'EB Garamond', serif;
     font-size: 2em;
     color: #ea7a57; }
   form .search {
@@ -62,6 +63,7 @@ form {
         form .search > div input:focus {
           outline: none; }
     form .search button {
+      cursor: pointer;
       color: #fff;
       background-color: #47A5FF;
       font-size: 1em;
