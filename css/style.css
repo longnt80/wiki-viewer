@@ -11,6 +11,9 @@ html {
   @media (min-width: 1025px) {
     html {
       font-size: 20px; } }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 24px; } }
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -92,12 +95,18 @@ form {
   .border.grow {
     width: 95%;
     background-color: #d8ebf9; }
+    @media (min-width: 1024px) {
+      .border.grow {
+        max-width: 1336px; } }
 
 .results {
   text-align: left;
   width: 95%;
   margin: 1em auto;
   font-size: 1em; }
+  @media (min-width: 1024px) {
+    .results {
+      max-width: 1336px; } }
   .results .item {
     background-color: #d8ebf9;
     transition: background-color,border-left 500ms linear;

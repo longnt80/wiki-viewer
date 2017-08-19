@@ -15,6 +15,7 @@ html {
   font-size: 12px;
   @media (min-width: 426px) {font-size: 16px;}
   @media (min-width: 1025px) {font-size: 20px;}
+  @media (min-width: 1800px) {font-size: 24px;}
 }
 
 body {
@@ -127,6 +128,9 @@ form {
   &.grow {
     width: 95%;
     background-color: $lighter-blue;
+    @media (min-width: 1024px) {
+      max-width: 1336px;
+    }
   }
 }
 
@@ -135,6 +139,9 @@ form {
   width: 95%;
   margin: 1em auto;
   font-size: 1em;
+  @media (min-width: 1024px) {
+    max-width: 1336px;
+  }
 
   .item {
     background-color: $lighter-blue;
