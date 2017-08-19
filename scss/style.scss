@@ -159,6 +159,9 @@ form {
       border-left: 0.5em solid $blue;
       text-decoration: none;
       color: $blue;
+      .searchmatch {
+        background-color: #f6fbff;
+      }
     }
 
     .title {
@@ -168,9 +171,6 @@ form {
     }
     .desc {
       color: $font-color;
-    }
-    .searchmatch {
-      background-color: #f6fbff;
     }
   }
 

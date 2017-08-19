@@ -121,14 +121,14 @@ form {
       border-left: 0.5em solid #47A5FF;
       text-decoration: none;
       color: #47A5FF; }
+      .results .item:hover .searchmatch {
+        background-color: #f6fbff; }
     .results .item .title {
       margin-bottom: 0.2em;
       font-weight: 700;
       color: #ea7a57; }
     .results .item .desc {
       color: #5d5252; }
-    .results .item .searchmatch {
-      background-color: #f6fbff; }
   .results.error {
     color: #d63737;
     text-align: center; }
