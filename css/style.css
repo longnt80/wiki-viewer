@@ -109,7 +109,7 @@ form {
       max-width: 1336px; } }
   .results .item {
     background-color: #d8ebf9;
-    transition: background-color,border-left 500ms linear;
+    transition: background-color,border-left 200ms linear;
     padding: 0.5em;
     margin-bottom: 0.3em;
     border-left: 0.5em solid transparent;
