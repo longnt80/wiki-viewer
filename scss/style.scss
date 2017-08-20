@@ -128,7 +128,7 @@ form {
   &.grow {
     max-width: 95%;
     background-color: $lighter-blue;
-    @media (min-width: 1024px) {
+    @media (min-width: 1500px) {
       max-width: 1336px;
     }
   }
@@ -139,7 +139,8 @@ form {
   width: 95%;
   margin: 1em auto;
   font-size: 1em;
-  @media (min-width: 1024px) {
+  @media (min-width: 1500px) {
+    width: 100%;
     max-width: 1336px;
   }
 

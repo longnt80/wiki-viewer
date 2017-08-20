@@ -4,7 +4,7 @@ function doTheSearch() {
   //  $('.random').css('display','none');
    $('form').addClass('compact');
 
-   var lang = navigator.language.substring(0,2);
+   var lang = navigator.language.substring(0,2) || "en";
    var searchTerm = $('input').val();
    var url = 'https://' + lang + '.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=' + searchTerm + '&srwhat=text&srinfo=totalhits&srprop=titlesnippet%7Csnippet';
    // empty the page before loading new result

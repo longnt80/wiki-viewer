@@ -95,7 +95,7 @@ form {
   .border.grow {
     max-width: 95%;
     background-color: #d8ebf9; }
-    @media (min-width: 1024px) {
+    @media (min-width: 1500px) {
       .border.grow {
         max-width: 1336px; } }
 
@@ -104,8 +104,9 @@ form {
   width: 95%;
   margin: 1em auto;
   font-size: 1em; }
-  @media (min-width: 1024px) {
+  @media (min-width: 1500px) {
     .results {
+      width: 100%;
       max-width: 1336px; } }
   .results .item {
     background-color: #d8ebf9;
