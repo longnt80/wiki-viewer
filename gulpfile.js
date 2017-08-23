@@ -19,24 +19,16 @@ gulp.task('serve', ['sass'], function() {
     gulp.watch("./js/*.js").on('change', browserSync.reload);
 });
 
-// gulp.task('watch', ['sass'], function() {
-//     gulp.watch("./scss/*.scss", ['sass']);
-// });
 
-// gulp.task('addPrefix', () =>
-//     gulp.src('./css/style.css')
-//         .pipe(autoprefixer({
-//             browsers: ['last 2 versions'],
-//             cascade: false
-//         }))
-//         .pipe(gulp.dest('dist'))
-//         .pipe(browserSync.stream());
-// );
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
     return gulp.src("./scss/*.scss")
         .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest("./css"))
         .pipe(browserSync.stream());
 });
